@@ -9,17 +9,20 @@ int main()
 
     do
     {
+
+                                                                                               
+        cout << "\n             Welcome to";     
+        cout << "\n          Brandons' Oasis";
+
         cout << "\n\n***************************************";
         cout << "\n          CHOOSE SERVICE";
         cout << "\n***************************************";
-        cout << "\n1. ROOM BOOKING";
-        cout << "\n2. FOOD ORDER";
-        cout << "\n3. ROOM CLEANING";
-        cout << "\n4. PAYMENT SYSTEM";
-        cout << "\n5. CUSTOMER SERVICE";
-        cout << "\n6. EXIT";
+        cout << "\n1. ROOM BOOKING (IN PROGRESS)";
+        cout << "\n2. ROOM CLEANING (IN PROGRESS)";
+        cout << "\n3. PAYMENT SYSTEM (PLACEHOLDER)";
+        cout << "\n4. EXIT";
 
-        cout << "\n\nEnter Category: ";
+        cout << "\n\nEnter Category(1-4): ";
         cin >> category;
 
         switch (category)
@@ -32,11 +35,11 @@ int main()
                 do
                 {
                     cout << "\n\n******** ROOM BOOKING ********";
-                    cout << "\n1. Standard Room - $677";
-                    cout << "\n2. Deluxe Room - $850";
-                    cout << "\n3. Suite Room - $1200";
+                    cout << "\n1. Standard Room - ₱1299";
+                    cout << "\n2. Deluxe Room - ₱2499";
+                    cout << "\n3. Suite Room - ₱3350";
 
-                    cout << "\n\nEnter Room: ";
+                    cout << "\n\nEnter Room type: ";
                     cin >> choice;
 
                     cout << "Enter Number of Rooms: ";
@@ -69,98 +72,44 @@ int main()
                 } while (again == 'Y' || again == 'y');
 
                 break;
-            }
 
-            // =========================
-            // FOOD ORDER
-            // =========================
-            case 2:
-            {
-                do
-                {
-                    cout << "\n\n******** FOOD ORDER ********";
-                    cout << "\n1. Pizza - $677";
-                    cout << "\n2. Burger & Fries - $250";
-                    cout << "\n3. Pesto Pasta - $300";
-
-                    cout << "\n\nEnter Food: ";
-                    cin >> choice;
-
-                    cout << "Enter Quantity: ";
-                    cin >> quantity;
-
-                    switch (choice)
-                    {
-                        case 1:
-                            total += 677 * quantity;
-                            cout << "Pizza added!";
-                            break;
-
-                        case 2:
-                            total += 250 * quantity;
-                            cout << "Burger & Fries added!";
-                            break;
-
-                        case 3:
-                            total += 300 * quantity;
-                            cout << "Pesto Pasta added!";
-                            break;
-
-                        default:
-                            cout << "Invalid food choice!";
-                    }
-
-                    cout << "\nOrder another food? (Y/N): ";
-                    cin >> again;
-
-                } while (again == 'Y' || again == 'y');
-
-                break;
             }
 
             // =========================
             // ROOM CLEANING
             // =========================
-            case 3:
+            case 2:
             {
                 do
                 {
                     cout << "\n\n******** ROOM CLEANING ********";
-                    cout << "\n1. Basic Cleaning - $100";
-                    cout << "\n2. Deep Cleaning - $250";
-                    cout << "\n3. Premium Cleaning - $400";
+                    cout << "\n          Cleaning Service ";
+                    cout << "\n !!This will add aditional Fee(₱330)!!";
 
-                    cout << "\n\nEnter Cleaning Service: ";
+                    cout << "\n\nYes[1]/No[2]: ";
                     cin >> choice;
 
-                    cout << "Enter Quantity: ";
-                    cin >> quantity;
 
                     switch (choice)
                     {
                         case 1:
-                            total += 100 * quantity;
-                            cout << "Basic Cleaning added!";
+                            total += 330;
+                            cout << "Service added";
                             break;
 
                         case 2:
-                            total += 250 * quantity;
-                            cout << "Deep Cleaning added!";
+                            cout << "Placeholder4882";
                             break;
 
-                        case 3:
-                            total += 400 * quantity;
-                            cout << "Premium Cleaning added!";
-                            break;
 
                         default:
                             cout << "Invalid cleaning choice!";
                     }
 
-                    cout << "\nAdd another cleaning service? (Y/N): ";
+                    cout << "\nExit? (Y/N): ";
                     cin >> again;
 
-                } while (again == 'Y' || again == 'y');
+                } while (again == 'N' || again == 'n');
 
                 break;
             }
@@ -168,10 +117,10 @@ int main()
             // =========================
             // PAYMENT SYSTEM
             // =========================
-            case 4:
+            case 3:
             {
                 cout << "\n\n******** PAYMENT SYSTEM ********";
-                cout << "\nCurrent Total: $" << total;
+                cout << "\nCurrent Total: ₱" << total;
 
                 if (total > 0)
                 {
@@ -208,46 +157,13 @@ int main()
                 }
 
                 break;
-            }
 
-            // =========================
-            // CUSTOMER SERVICE
-            // =========================
-            case 5:
-            {
-                cout << "\n\n******** CUSTOMER SERVICE ********";
-                cout << "\n1. Ask a Question";
-                cout << "\n2. Make a Complaint";
-                cout << "\n3. Request Assistance";
-
-                cout << "\n\nChoose an option: ";
-                cin >> choice;
-
-                switch (choice)
-                {
-                    case 1:
-                        cout << "\nQuestion request submitted.";
-                        break;
-
-                    case 2:
-                        cout << "\nComplaint request submitted.";
-                        break;
-
-                    case 3:
-                        cout << "\nAssistance request submitted.";
-                        break;
-
-                    default:
-                        cout << "\nInvalid choice!";
-                }
-
-                break;
             }
 
             // =========================
             // EXIT
             // =========================
-            case 6:
+            case 4:
                 cout << "\nThank you for using our service!";
                 break;
 
@@ -256,19 +172,19 @@ int main()
         }
 
         // Show current total after each category
-        if (category != 6)
+        if (category != 3)
         {
             cout << "\n\n***************************************";
-            cout << "\nCURRENT TOTAL: $" << total;
+            cout << "\nCURRENT TOTAL: ₱" << total;
             cout << "\n***************************************";
 
             cout << "\n\nReturn to main menu? (Y/N): ";
             cin >> again;
         }
 
-    } while (category != 6 && (again == 'Y' || again == 'y'));
+    } while (category != 3 && (again == 'Y' || again == 'y'));
 
-    cout << "\n\nFinal Total: $" << total;
+    cout << "\n\nFinal Total: ₱" << total;
     cout << "\nThank you!";
 
     return 0;
